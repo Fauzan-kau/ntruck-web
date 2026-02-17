@@ -11,6 +11,7 @@ const HomePage        = React.lazy(() => import('@/features/home'));
 const DriversPage     = React.lazy(() => import('@/features/drivers'));
 const VendorsPage     = React.lazy(() => import('@/features/vendors'));
 const ContactPage     = React.lazy(() => import('@/features/contact'));
+const AboutPage       = React.lazy(() => import('@/features/about'));
 const ComingSoonPage  = React.lazy(() => import('@/features/coming-soon'));
 
 const PageLoader: React.FC = () => (
@@ -34,6 +35,7 @@ export const AppRoutes: React.FC = () => (
         <Route path="/drivers"      element={<DriversPage />}      />
         <Route path="/vendors"      element={<VendorsPage />}      />
         <Route path="/contact"      element={<ContactPage />}      />
+        <Route path="/about"        element={<AboutPage />}        />
 
         <Route path="/careers"  element={<ComingSoonPage />} />
         <Route path="/blog"     element={<ComingSoonPage />} />

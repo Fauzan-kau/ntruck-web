@@ -6,8 +6,9 @@ import { Container } from '@/components/common/Container';
 import { PageHeader } from '@/components/common/PageHeader';
 import { Button } from '@/components/common/Button';
 import { Link } from 'react-router-dom';
-import loadPostImg from '@/assets/images/loadpost.svg';
-import loginImg    from '@/assets/images/login.svg';
+import vendorHeroBg from '@/assets/images/vendor-hero-bg.jpg';
+import loadPostImg  from '@/assets/images/loadpost.svg';
+import loginImg     from '@/assets/images/login.svg';
 import { vendorPageHero, vendorFeatures, vendorStats } from './data';
 import styles from './Vendors.module.scss';
 
@@ -16,7 +17,11 @@ const { Title, Paragraph, Text } = Typography;
 const VendorsPage: React.FC = () => (
   <>
     {/* Hero */}
-    <Section variant="gradient" size="lg">
+    <section
+      className={styles.heroSection}
+      style={{ backgroundImage: `url(${vendorHeroBg})` }}
+    >
+      <div className={styles.heroOverlay} />
       <Container>
         <Row gutter={[48, 48]} align="middle" className={styles.heroRow}>
           {/* Left – text */}
@@ -64,7 +69,7 @@ const VendorsPage: React.FC = () => (
           </Col>
         </Row>
       </Container>
-    </Section>
+    </section>
 
     {/* Features */}
     <Section variant="default" size="lg">

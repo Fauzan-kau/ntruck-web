@@ -1,5 +1,26 @@
+// Hero with background image
+.heroSection {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba($dark-bg, 0.85) 0%,
+    rgba($color-primary, 0.68) 55%,
+    rgba($dark-bg, 0.72) 100%
+  );
+}
+
 // Page Hero
 .heroRow {
+  position: relative;
+  z-index: 1;
   min-height: calc(100vh - 72px);
   padding: $space-12 0;
 

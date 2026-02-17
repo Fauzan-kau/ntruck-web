@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/common/Button';
 import { Container } from '@/components/common/Container';
 import { heroHeadline } from '../../data';
+import heroBg     from '@/assets/images/hero-bg.jpg';
 import appIcon    from '@/assets/images/app-icon.png';
 import iphoneMock from '@/assets/images/iphone-mockup.png';
 import styles from './HeroSection.module.scss';
@@ -23,7 +24,10 @@ const TRUST_BADGES = [
 ];
 
 export const HeroSection: React.FC = () => (
-  <section className={styles.hero}>
+  <section
+    className={styles.hero}
+    style={{ backgroundImage: `url(${heroBg})` }}
+  >
     {/* Background decorations */}
     <div className={styles.bg}>
       <div className={styles.bgOrb1} />
@@ -31,10 +35,24 @@ export const HeroSection: React.FC = () => (
       <div className={styles.bgGrid} />
     </div>
 
+    {/* Phone mockup — absolutely pinned to bottom-right of section */}
+    <div className={styles.visualFloat}>
+      <img
+        src={appIcon}
+        alt="nTruck app icon"
+        className={styles.appIconImg}
+      />
+      <img
+        src={iphoneMock}
+        alt="nTruck app on iPhone"
+        className={styles.iphoneImg}
+      />
+    </div>
+
     <Container>
-      <Row gutter={[48, 48]} align="middle" className={styles.row}>
+      <Row align="middle" className={styles.row}>
         {/* Left – Text */}
-        <Col xs={24} lg={13}>
+        <Col xs={24} lg={14}>
           <div className={styles.content}>
             <Tag className={styles.eyebrow} color="orange">
               🇮🇳 Made for India's Roads
@@ -103,24 +121,6 @@ export const HeroSection: React.FC = () => (
                 <strong>1,000+</strong> verified drivers trust nTruck
               </Text>
             </div>
-          </div>
-        </Col>
-
-        {/* Right – Visual */}
-        <Col xs={24} lg={11} className={styles.visualCol}>
-          <div className={styles.visualWrapper}>
-            {/* iPhone mockup — main image */}
-            <img
-              src={iphoneMock}
-              alt="nTruck app on iPhone"
-              className={styles.iphoneImg}
-            />
-            {/* App icon — floating top-left */}
-            <img
-              src={appIcon}
-              alt="nTruck app icon"
-              className={styles.appIconImg}
-            />
           </div>
         </Col>
       </Row>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-type LogoVariant = 'db' | 'g' | 'lb' | 'white';
+type LogoVariant = 'db' | 'g' | 'lb' | 'white' | 'current';
 type LogoType = 'full' | 'icon' | 'wordmark';
 
 interface LogoProps {
@@ -29,10 +29,11 @@ const WORDMARK_PATHS = [
 ];
 
 const VARIANT_COLORS: Record<LogoVariant, string> = {
-  db:    '#002369',
-  g:     '#96D228',
-  lb:    '#007EFF',
-  white: '#FFFFFF',
+  db:      '#002369',
+  g:       '#96D228',
+  lb:      '#007EFF',
+  white:   '#FFFFFF',
+  current: 'currentColor',
 };
 
 export const Logo: React.FC<LogoProps> = ({

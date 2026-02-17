@@ -41,28 +41,30 @@
   gap: $space-2;
   text-decoration: none;
   flex-shrink: 0;
+  color: white;
+  transition: color $transition-base;
+
+  &:hover {
+    color: $color-secondary;
+  }
 }
 
 .logoSvg {
   flex-shrink: 0;
   display: block;
+  // inherits currentColor from .logo
 }
 
 .logoText {
   font-family: $font-display;
   font-size: $fs-xl;
   font-weight: 400;
-  color: $color-primary;
   letter-spacing: 0.04em;
-  text-transform: uppercase;
-
-  [data-theme='dark'] & {
-    color: $color-neutral-50;
-  }
+  color: inherit;
 }
 
 .logoAccent {
-  color: $color-secondary;
+  color: inherit;
 }
 
 // Desktop nav

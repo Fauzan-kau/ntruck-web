@@ -1,0 +1,347 @@
+// Hero with background image
+.heroSection {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba($dark-bg, 0.80) 0%,
+    rgba($color-primary, 0.65) 55%,
+    rgba($dark-bg, 0.75) 100%
+  );
+}
+
+// Hero
+.pageHero {
+  position: relative;
+  z-index: 1;
+  @include flex-column-center;
+  text-align: center;
+  gap: $space-6;
+  max-width: 780px;
+  margin: 0 auto;
+  padding: $space-12 0;
+  animation: fade-in-up 0.8s ease both;
+}
+
+.heroEyebrow {
+  font-size: $fs-sm !important;
+  font-weight: 600 !important;
+  border-radius: $radius-full !important;
+  padding: $space-1 $space-4 !important;
+  background: rgba($color-secondary, 0.15) !important;
+  border-color: rgba($color-secondary, 0.4) !important;
+  color: $color-secondary-light !important;
+  width: fit-content;
+}
+
+.heroTitle {
+  font-family: $font-heading !important;
+  font-size: clamp(#{$fs-3xl}, 5vw, #{$fs-6xl}) !important;
+  font-weight: 800 !important;
+  color: white !important;
+  line-height: 1.05 !important;
+  letter-spacing: -0.03em !important;
+  margin: 0 !important;
+}
+
+.heroSubtitle {
+  font-size: $fs-lg !important;
+  color: rgba(255, 255, 255, 0.65) !important;
+  line-height: 1.65 !important;
+  margin: 0 !important;
+}
+
+.statsStrip {
+  display: flex;
+  gap: $space-10;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: $space-2;
+
+  @include sm {
+    gap: $space-6;
+  }
+}
+
+.stat {
+  @include flex-column;
+  align-items: center;
+  gap: $space-1;
+}
+
+.statValue {
+  font-family: $font-heading !important;
+  font-size: $fs-2xl !important;
+  font-weight: 800 !important;
+  color: $color-secondary !important;
+}
+
+.statLabel {
+  color: rgba(255, 255, 255, 0.55) !important;
+  font-size: $fs-xs !important;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+// Story
+.storyText {
+  @include flex-column;
+  gap: $space-5;
+}
+
+.storyHeadline {
+  font-family: $font-heading !important;
+  font-size: $fs-3xl !important;
+  font-weight: 800 !important;
+  color: var(--color-text) !important;
+  margin: 0 !important;
+}
+
+.storyPara {
+  color: var(--color-muted) !important;
+  font-size: $fs-base !important;
+  line-height: 1.75 !important;
+  margin: 0 !important;
+}
+
+.storyVisual {
+  @include flex-column;
+  gap: $space-4;
+  padding: $space-8;
+  background: $gradient-hero;
+  border-radius: $radius-xl;
+  border: 1px solid rgba($color-primary-light, 0.15);
+}
+
+.statCard {
+  @include flex-column;
+  gap: $space-2;
+  padding: $space-6;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: $radius-xl;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+
+.bigStat {
+  font-family: $font-heading !important;
+  font-size: $fs-5xl !important;
+  font-weight: 900 !important;
+  color: $color-secondary !important;
+  line-height: 1 !important;
+}
+
+.bigStatLabel {
+  color: rgba(255, 255, 255, 0.65) !important;
+  font-size: $fs-sm !important;
+  line-height: 1.5 !important;
+}
+
+.storyPill {
+  @include flex-center;
+  justify-content: flex-start;
+  gap: $space-3;
+  padding: $space-3 $space-4;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: $radius-lg;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: $fs-sm;
+  font-weight: 500;
+}
+
+.pillDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+// Values
+.valuesGrid {
+  margin-top: $space-8;
+}
+
+.valueCard {
+  height: 100%;
+  border-radius: $radius-xl !important;
+  padding: $space-6 !important;
+  border: 1px solid var(--color-border) !important;
+  background: var(--color-surface) !important;
+  @include card-hover;
+
+  [data-theme='dark'] & {
+    background: $dark-surface-1 !important;
+    border-color: $dark-border !important;
+  }
+}
+
+.valueIcon {
+  width: 52px;
+  height: 52px;
+  border-radius: $radius-md;
+  @include flex-center;
+  font-size: 24px;
+  margin-bottom: $space-4;
+  transition: all $transition-base;
+}
+
+.valueTitle {
+  font-family: $font-heading !important;
+  font-size: $fs-lg !important;
+  font-weight: 700 !important;
+  margin: 0 0 $space-3 !important;
+  color: var(--color-text) !important;
+}
+
+.valueDesc {
+  color: var(--color-muted) !important;
+  font-size: $fs-sm !important;
+  line-height: 1.65 !important;
+  margin: 0 !important;
+}
+
+// Team — horizontal alternating rows
+.teamList {
+  @include flex-column;
+  gap: $space-8;
+  margin-top: $space-8;
+}
+
+.teamRow {
+  display: flex;
+  align-items: center;
+  gap: $space-10;
+  padding: $space-8;
+  border-radius: $radius-xl;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  transition: box-shadow $transition-base;
+
+  &:hover {
+    box-shadow: $shadow-lg;
+  }
+
+  // Reversed: avatar on the right
+  &.teamRowReversed {
+    flex-direction: row-reverse;
+  }
+
+  @include md {
+    flex-direction: column !important;
+    text-align: center;
+  }
+
+  [data-theme='dark'] & {
+    background: $dark-surface-1;
+    border-color: $dark-border;
+  }
+}
+
+.avatarWrap {
+  flex-shrink: 0;
+}
+
+.avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  @include flex-center;
+  font-family: $font-heading;
+  font-size: $fs-3xl;
+  font-weight: 700;
+
+  @include md {
+    margin: 0 auto;
+  }
+}
+
+.avatarPhoto {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
+  border: 3px solid rgba($color-secondary, 0.4);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+
+  @include md {
+    margin: 0 auto;
+  }
+}
+
+.memberInfo {
+  @include flex-column;
+  gap: $space-2;
+  flex: 1;
+}
+
+.memberName {
+  font-family: $font-heading !important;
+  font-size: $fs-xl !important;
+  font-weight: 700 !important;
+  margin: 0 !important;
+  color: var(--color-text) !important;
+}
+
+.memberRole {
+  display: block;
+  color: $color-secondary !important;
+  font-size: $fs-sm !important;
+  font-weight: 600 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.memberTags {
+  margin: $space-1 0;
+}
+
+.memberTag {
+  padding: $space-1 $space-3;
+  background: rgba($color-primary, 0.07);
+  border: 1px solid rgba($color-primary, 0.15);
+  border-radius: $radius-full;
+  color: var(--color-text);
+  font-size: $fs-xs;
+  font-weight: 500;
+
+  [data-theme='dark'] & {
+    background: rgba($color-primary-light, 0.1);
+    border-color: rgba($color-primary-light, 0.2);
+  }
+}
+
+.bioPara {
+  color: var(--color-muted) !important;
+  font-size: $fs-sm !important;
+  line-height: 1.75 !important;
+  margin: 0 !important;
+}
+
+// CTA
+.cta {
+  @include flex-column-center;
+  text-align: center;
+  gap: $space-4;
+  padding: $space-8 0;
+}
+
+.ctaTitle {
+  color: white !important;
+  font-family: $font-heading !important;
+  font-weight: 700 !important;
+  margin: 0 !important;
+}
+
+.ctaSubtitle {
+  color: rgba(255, 255, 255, 0.6) !important;
+  margin: 0 !important;
+}

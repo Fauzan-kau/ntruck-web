@@ -43,7 +43,7 @@ export const Footer: React.FC = () => (
           <Link to="/" className={styles.logo}>
             <Logo variant="white" type="icon" height={36} />
             <span className={styles.logoText}>
-              n<span className={styles.logoAccent}>Truck</span>
+              n<span className={styles.logoAccent}>truck</span>
             </span>
           </Link>
 

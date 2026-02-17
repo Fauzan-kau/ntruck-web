@@ -6,6 +6,7 @@ import { Container } from '@/components/common/Container';
 import { PageHeader } from '@/components/common/PageHeader';
 import { Button } from '@/components/common/Button';
 import { Link } from 'react-router-dom';
+import driverHeroBg  from '@/assets/images/driver-hero-bg.webp';
 import loadMarketImg from '@/assets/images/loadmarket.svg';
 import beginLoadImg  from '@/assets/images/beginload.svg';
 import {
@@ -21,7 +22,11 @@ const { Title, Paragraph, Text } = Typography;
 const DriversPage: React.FC = () => (
   <>
     {/* Hero */}
-    <Section variant="gradient" size="lg">
+    <section
+      className={styles.heroSection}
+      style={{ backgroundImage: `url(${driverHeroBg})` }}
+    >
+      <div className={styles.heroOverlay} />
       <Container>
         <Row gutter={[48, 48]} align="middle" className={styles.heroRow}>
           {/* Left – text */}
@@ -69,7 +74,7 @@ const DriversPage: React.FC = () => (
           </Col>
         </Row>
       </Container>
-    </Section>
+    </section>
 
     {/* Features Grid */}
     <Section variant="default" size="lg">

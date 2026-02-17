@@ -1,9 +1,13 @@
 .hero {
   position: relative;
   min-height: 100vh;
+  max-height: 100vh;
   @include flex-center;
-  background: $gradient-hero;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   padding: $space-20 0 $space-16;
+  overflow: hidden;
 
   @include md {
     min-height: auto;
@@ -17,6 +21,20 @@
   inset: 0;
   pointer-events: none;
   overflow: hidden;
+
+  // Dark overlay so photo doesn't overpower text
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      135deg,
+      rgba($dark-bg, 0.82) 0%,
+      rgba($color-primary, 0.70) 50%,
+      rgba($dark-bg, 0.75) 100%
+    );
+    z-index: 1;
+  }
 }
 
 .bgOrb1 {
@@ -24,9 +42,10 @@
   width: 600px;
   height: 600px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba($color-primary-light, 0.25) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba($color-primary-light, 0.18) 0%, transparent 70%);
   top: -100px;
   right: -100px;
+  z-index: 2;
 }
 
 .bgOrb2 {
@@ -34,9 +53,10 @@
   width: 500px;
   height: 500px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba($color-secondary, 0.15) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba($color-secondary, 0.12) 0%, transparent 70%);
   bottom: -80px;
   left: 5%;
+  z-index: 2;
 }
 
 .bgGrid {
@@ -46,6 +66,7 @@
     linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
   background-size: 60px 60px;
+  z-index: 2;
 }
 
 .row {
@@ -182,49 +203,45 @@
   }
 }
 
-// Visual
-.visualCol {
-  @include flex-center;
+// Visual — absolutely pinned to bottom-right of the hero section
+.visualFloat {
+  position: absolute;
+  bottom: 0;
+  right: 4%;
+  z-index: 3;
+  width: 28%;
+  max-width: 380px;
+  min-width: 260px;
   animation: slide-in-right 0.9s ease 0.2s both;
+
+  @include lg {
+    width: 32%;
+  }
 
   @include md {
     display: none;
   }
 }
 
-.visualWrapper {
-  position: relative;
-  width: 100%;
-  max-width: 420px;
-  margin: 0 auto;
-}
-
-// iPhone mockup — main image
+// iPhone mockup — fills the float container, bottom edge flush with section
 .iphoneImg {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: $radius-xl;
-  filter: drop-shadow(0 40px 80px rgba(0, 0, 0, 0.55));
+  object-fit: contain;
+  filter: drop-shadow(-12px 0 40px rgba(0, 0, 0, 0.55));
   animation: float 6s ease-in-out infinite;
 }
 
-// App icon — floating top-left
+// App icon — floating top-left of the phone
 .appIconImg {
   position: absolute;
-  top: -24px;
-  left: -32px;
-  width: 96px;
-  height: 96px;
+  top: -20px;
+  left: -28px;
+  width: 88px;
+  height: 88px;
   border-radius: $radius-xl;
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45), 0 0 0 3px rgba(255,255,255,0.12);
   animation: float 5s ease-in-out 1.5s infinite;
   object-fit: cover;
-
-  @include sm {
-    width: 72px;
-    height: 72px;
-    top: -16px;
-    left: -16px;
-  }
 }

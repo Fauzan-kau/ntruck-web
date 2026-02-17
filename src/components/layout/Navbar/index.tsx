@@ -26,6 +26,7 @@ const NAV_ITEMS: MenuProps['items'] = [
   { key: '/',              label: <Link to="/">Home</Link> },
   { key: '/drivers',       label: <Link to="/drivers">Drivers</Link> },
   { key: '/vendors',       label: <Link to="/vendors">Vendors</Link> },
+  { key: '/about',         label: <Link to="/about">About</Link> },
   { key: '/contact',       label: <Link to="/contact">Contact</Link> },
 ];
 
@@ -67,13 +68,13 @@ export const Navbar: React.FC = () => {
           {/* Logo */}
           <Link to="/" className={styles.logo}>
             <Logo
-              variant={isDark ? 'white' : 'db'}
+              variant="current"
               type="icon"
               height={36}
               className={styles.logoSvg}
             />
             <span className={styles.logoText}>
-              n<span className={styles.logoAccent}>Truck</span>
+              n<span className={styles.logoAccent}>truck</span>
             </span>
           </Link>
 
@@ -124,7 +125,7 @@ export const Navbar: React.FC = () => {
         title={
           <Link to="/" className={styles.drawerLogo}>
             <Logo variant="db" type="icon" height={28} />
-            <span>nTruck</span>
+            <span>ntruck</span>
           </Link>
         }
         closeIcon={<CloseOutlined />}
