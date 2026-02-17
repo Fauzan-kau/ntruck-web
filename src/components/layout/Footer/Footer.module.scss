@@ -1,0 +1,174 @@
+.footer {
+  background: $dark-bg;
+  color: $color-neutral-300;
+  padding: $space-20 0 $space-8;
+}
+
+.grid {
+  padding-bottom: $space-8;
+}
+
+// Brand
+.logo {
+  @include flex-center;
+  justify-content: flex-start;
+  gap: $space-2;
+  margin-bottom: $space-5;
+  text-decoration: none;
+}
+
+.logoIcon {
+  width: 38px;
+  height: 38px;
+  background: $gradient-secondary;
+  border-radius: $radius-base;
+  @include flex-center;
+  color: white;
+  font-size: $fs-lg;
+}
+
+.logoText {
+  font-family: $font-heading;
+  font-size: $fs-2xl;
+  font-weight: 800;
+  color: $color-neutral-50;
+}
+
+.logoAccent {
+  color: $color-secondary;
+}
+
+.tagline {
+  color: $color-neutral-400 !important;
+  font-size: $fs-sm !important;
+  line-height: 1.7 !important;
+  margin-bottom: $space-5 !important;
+}
+
+.socials {
+  margin-bottom: $space-5;
+}
+
+.socialLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: $radius-base;
+  background: rgba(255, 255, 255, 0.08);
+  color: $color-neutral-300;
+  font-size: $fs-base;
+  transition: all $transition-base;
+
+  &:hover {
+    background: $color-secondary;
+    color: white;
+    transform: translateY(-2px);
+  }
+}
+
+.contact {
+  @include flex-column;
+  gap: $space-2;
+}
+
+.contactItem {
+  @include flex-center;
+  justify-content: flex-start;
+  gap: $space-2;
+  color: $color-neutral-400;
+  font-size: $fs-sm;
+  transition: color $transition-fast;
+  text-decoration: none;
+
+  &:hover {
+    color: $color-neutral-100;
+  }
+}
+
+// Links
+.colTitle {
+  display: block;
+  color: $color-neutral-50 !important;
+  font-size: $fs-sm !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: $space-5 !important;
+}
+
+.linkList {
+  list-style: none;
+  @include flex-column;
+  gap: $space-3;
+}
+
+.link {
+  color: $color-neutral-400;
+  font-size: $fs-sm;
+  transition: color $transition-fast;
+  @include animated-underline(rgba(255, 107, 0, 0.6));
+
+  &:hover {
+    color: $color-neutral-100;
+  }
+}
+
+// Badges
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-2;
+  margin-bottom: $space-4;
+}
+
+.badge {
+  padding: $space-1 $space-3;
+  background: rgba($color-secondary, 0.12);
+  border: 1px solid rgba($color-secondary, 0.25);
+  border-radius: $radius-full;
+  color: $color-secondary-light;
+  font-size: $fs-xs;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.ulipNote {
+  color: $color-neutral-500 !important;
+  font-size: $fs-xs !important;
+  line-height: 1.6 !important;
+}
+
+// Bottom
+.divider {
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  margin: 0 0 $space-6 !important;
+}
+
+.bottom {
+  @include flex-between;
+  flex-wrap: wrap;
+  gap: $space-4;
+
+  @include sm {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.copyright {
+  color: $color-neutral-500 !important;
+  font-size: $fs-sm !important;
+}
+
+.legalLink {
+  color: $color-neutral-500;
+  font-size: $fs-xs;
+  transition: color $transition-fast;
+
+  &:hover {
+    color: $color-neutral-300;
+  }
+}

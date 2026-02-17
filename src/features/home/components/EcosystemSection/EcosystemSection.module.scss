@@ -1,0 +1,84 @@
+.cardsRow {
+  margin-top: $space-8;
+}
+
+.card {
+  height: 100%;
+  border-radius: $radius-xl !important;
+  overflow: hidden !important;
+  @include card-hover;
+  box-shadow: $shadow-lg !important;
+  background: var(--color-surface) !important;
+
+  [data-theme='dark'] & {
+    background: $dark-surface-1 !important;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4) !important;
+  }
+}
+
+.cardHeader {
+  @include flex-center;
+  justify-content: flex-start;
+  gap: $space-4;
+  padding: $space-6;
+  border-radius: $radius-xl $radius-xl 0 0;
+}
+
+.cardIcon {
+  width: 52px;
+  height: 52px;
+  border-radius: $radius-md;
+  background: rgba(255, 255, 255, 0.2);
+  @include flex-center;
+  font-size: 24px;
+  color: white;
+  flex-shrink: 0;
+}
+
+.cardTitle {
+  color: white !important;
+  font-family: $font-heading !important;
+  font-weight: 700 !important;
+  margin: 0 !important;
+  font-size: $fs-xl !important;
+}
+
+.cardSubtitle {
+  color: rgba(255, 255, 255, 0.7) !important;
+  font-size: $fs-sm !important;
+}
+
+.cardBody {
+  padding: $space-6;
+  @include flex-column;
+  gap: $space-4;
+}
+
+.cardDesc {
+  color: var(--color-muted) !important;
+  font-size: $fs-sm !important;
+  line-height: 1.65 !important;
+  margin: 0 !important;
+}
+
+.featureItem {
+  padding: $space-1 0 !important;
+  border: none !important;
+  @include flex-center;
+  justify-content: flex-start;
+  gap: $space-2;
+}
+
+.featureIcon {
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.featureText {
+  font-size: $fs-sm !important;
+  color: var(--color-text) !important;
+}
+
+.cardCta {
+  margin-top: $space-2;
+}

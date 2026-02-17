@@ -1,0 +1,363 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  @include flex-center;
+  background: $gradient-hero;
+  overflow: hidden;
+  padding: $space-20 0 $space-16;
+
+  @include md {
+    min-height: auto;
+    padding: $space-16 0;
+  }
+}
+
+// Background decorations
+.bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.bgOrb1 {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba($color-primary-light, 0.25) 0%, transparent 70%);
+  top: -100px;
+  right: -100px;
+}
+
+.bgOrb2 {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba($color-secondary, 0.15) 0%, transparent 70%);
+  bottom: -80px;
+  left: 5%;
+}
+
+.bgGrid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.row {
+  position: relative;
+  z-index: 1;
+  min-height: calc(100vh - 72px);
+  padding: $space-12 0;
+
+  @include md {
+    min-height: auto;
+    padding: $space-8 0;
+  }
+}
+
+// Content
+.content {
+  @include flex-column;
+  gap: $space-6;
+  animation: fade-in-up 0.8s ease both;
+}
+
+.eyebrow {
+  font-size: $fs-sm !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.04em;
+  border-radius: $radius-full !important;
+  padding: $space-1 $space-4 !important;
+  width: fit-content;
+  background: rgba($color-secondary, 0.15) !important;
+  border-color: rgba($color-secondary, 0.4) !important;
+  color: $color-secondary-light !important;
+}
+
+.headline {
+  font-family: $font-heading !important;
+  font-size: clamp(2.5rem, 5vw, 4.5rem) !important;
+  font-weight: 800 !important;
+  color: white !important;
+  line-height: 1.05 !important;
+  letter-spacing: -0.03em !important;
+  margin: 0 !important;
+}
+
+.line1 {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.lineGradient {
+  @include gradient-text($gradient-secondary);
+}
+
+.subtitle {
+  font-size: $fs-lg !important;
+  color: rgba(255, 255, 255, 0.65) !important;
+  line-height: 1.65 !important;
+  max-width: 520px;
+  margin: 0 !important;
+
+  @include sm {
+    font-size: $fs-base !important;
+  }
+}
+
+.badges {
+  margin: $space-1 0;
+}
+
+.trustBadge {
+  @include flex-center;
+  gap: $space-1;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: $radius-full;
+  padding: $space-1 $space-3;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: $fs-xs;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.checkIcon {
+  color: $color-success;
+  font-size: $fs-xs;
+}
+
+.ctas {
+  margin-top: $space-2;
+}
+
+.demoBtn {
+  border-color: rgba(255, 255, 255, 0.35) !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+
+  &:hover {
+    border-color: white !important;
+    color: white !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+  }
+}
+
+// Social proof
+.socialProof {
+  @include flex-center;
+  justify-content: flex-start;
+  gap: $space-3;
+  margin-top: $space-2;
+}
+
+.avatarStack {
+  display: flex;
+  margin-right: $space-1;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  @include flex-center;
+  font-size: $fs-base;
+  margin-left: -8px;
+
+  &:first-child {
+    margin-left: 0;
+  }
+}
+
+.proofText {
+  color: rgba(255, 255, 255, 0.65) !important;
+  font-size: $fs-sm;
+
+  strong {
+    color: white;
+  }
+}
+
+// Visual
+.visualCol {
+  @include flex-center;
+  animation: slide-in-right 0.9s ease 0.2s both;
+
+  @include md {
+    display: none;
+  }
+}
+
+.visualWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+}
+
+// Mock app card
+.appCard {
+  background: rgba($dark-surface-2, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: $radius-xl;
+  overflow: hidden;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255,255,255,0.05);
+  animation: float 6s ease-in-out infinite;
+}
+
+.appCardHeader {
+  @include flex-center;
+  justify-content: flex-start;
+  gap: $space-2;
+  padding: $space-4 $space-5;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.appCardDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.appCardTitle {
+  color: rgba(255, 255, 255, 0.5) !important;
+  font-size: $fs-xs;
+  margin-left: $space-2;
+}
+
+.appCardBody {
+  padding: $space-5;
+}
+
+.mapPlaceholder {
+  position: relative;
+  height: 220px;
+  background: rgba($color-primary, 0.15);
+  border-radius: $radius-md;
+  overflow: hidden;
+  margin-bottom: $space-4;
+}
+
+.mapGrid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+.truckDot {
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  z-index: 2;
+  @include flex-center;
+}
+
+.pingRing {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid $color-secondary;
+  animation: pulse-ring 2s ease-out infinite;
+}
+
+.routeLine {
+  position: absolute;
+  top: 40%;
+  left: 20%;
+  width: 60%;
+  height: 2px;
+  background: linear-gradient(90deg, $color-secondary, transparent);
+  border-radius: $radius-full;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: $color-secondary;
+    top: -3px;
+  }
+
+  &::before { left: 0; }
+  &::after  { right: 0; background: $color-success; }
+}
+
+// Trip info
+.tripInfo {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $space-4;
+}
+
+.tripStat {
+  @include flex-column;
+  gap: $space-1;
+  padding: $space-3;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: $radius-base;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.statLabel {
+  color: rgba(255, 255, 255, 0.45) !important;
+  font-size: $fs-xs !important;
+}
+
+.statValue {
+  color: white !important;
+  font-size: $fs-xl !important;
+  font-weight: 700 !important;
+  font-family: $font-heading !important;
+}
+
+// Floating cards
+.floatCard {
+  position: absolute;
+  @include flex-center;
+  gap: $space-3;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: $radius-lg;
+  padding: $space-3 $space-5;
+  white-space: nowrap;
+  box-shadow: $shadow-xl;
+}
+
+.floatCard1 {
+  bottom: 60px;
+  left: -40px;
+  animation: float 5s ease-in-out 1s infinite;
+}
+
+.floatCard2 {
+  top: 20px;
+  right: -30px;
+  animation: float 5s ease-in-out 2.5s infinite;
+}
+
+.floatCardTitle {
+  color: white;
+  font-size: $fs-sm;
+  font-weight: 600;
+}
+
+.floatCardSub {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: $fs-xs;
+}

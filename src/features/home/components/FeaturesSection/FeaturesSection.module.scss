@@ -1,0 +1,90 @@
+.grid {
+  margin-top: $space-8;
+}
+
+.featureCard {
+  height: 100%;
+  border-radius: $radius-xl !important;
+  padding: $space-6 !important;
+  background: var(--color-surface) !important;
+  border: 1px solid var(--color-border) !important;
+  @include card-hover;
+  position: relative;
+  overflow: hidden;
+
+  [data-theme='dark'] & {
+    background: $dark-surface-1 !important;
+    border-color: $dark-border !important;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: transparent;
+    transition: background $transition-base;
+  }
+
+  &:hover::before,
+  &.highlighted::before {
+    background: $gradient-secondary;
+  }
+
+  &.highlighted {
+    border-color: rgba($color-primary, 0.25) !important;
+    background: linear-gradient(135deg, rgba($color-primary, 0.03) 0%, var(--color-surface) 100%) !important;
+
+    [data-theme='dark'] & {
+      background: linear-gradient(135deg, rgba($color-primary, 0.12) 0%, $dark-surface-1 100%) !important;
+      border-color: rgba($color-primary, 0.3) !important;
+    }
+  }
+}
+
+.featureTag {
+  font-size: $fs-xs !important;
+  border-radius: $radius-full !important;
+  margin-bottom: $space-3;
+  display: inline-block;
+}
+
+.iconBox {
+  width: 48px;
+  height: 48px;
+  border-radius: $radius-md;
+  background: rgba($color-primary, 0.08);
+  color: $color-primary;
+  @include flex-center;
+  font-size: 22px;
+  margin-bottom: $space-4;
+  transition: all $transition-base;
+
+  .featureCard:hover & {
+    background: $gradient-primary;
+    color: white;
+    transform: scale(1.05);
+  }
+
+  &.iconHighlight {
+    background: $gradient-primary;
+    color: white;
+  }
+}
+
+.featureTitle {
+  font-family: $font-heading !important;
+  font-size: $fs-lg !important;
+  font-weight: 700 !important;
+  color: var(--color-text) !important;
+  margin: 0 0 $space-3 !important;
+}
+
+.featureDesc {
+  color: var(--color-muted) !important;
+  font-size: $fs-sm !important;
+  line-height: 1.65 !important;
+  margin: 0 !important;
+}

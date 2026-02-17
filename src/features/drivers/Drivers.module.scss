@@ -1,0 +1,217 @@
+// Page Hero
+.pageHero {
+  @include flex-column-center;
+  text-align: center;
+  gap: $space-6;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: $space-12 0;
+  animation: fade-in-up 0.8s ease both;
+}
+
+.heroEyebrow {
+  font-size: $fs-sm !important;
+  font-weight: 600 !important;
+  border-radius: $radius-full !important;
+  padding: $space-1 $space-4 !important;
+  background: rgba($color-secondary, 0.15) !important;
+  border-color: rgba($color-secondary, 0.4) !important;
+  color: $color-secondary-light !important;
+  width: fit-content;
+}
+
+.heroTitle {
+  font-family: $font-heading !important;
+  font-size: clamp(#{$fs-3xl}, 5vw, #{$fs-6xl}) !important;
+  font-weight: 800 !important;
+  color: white !important;
+  line-height: 1.05 !important;
+  letter-spacing: -0.03em !important;
+  margin: 0 !important;
+}
+
+.heroSubtitle {
+  font-size: $fs-lg !important;
+  color: rgba(255, 255, 255, 0.65) !important;
+  line-height: 1.65 !important;
+  max-width: 600px;
+  margin: 0 !important;
+}
+
+.heroStats {
+  display: flex;
+  gap: $space-8;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  @include sm {
+    gap: $space-5;
+  }
+}
+
+.heroStat {
+  @include flex-column;
+  align-items: center;
+  gap: $space-1;
+}
+
+.heroStatValue {
+  font-family: $font-heading !important;
+  font-size: $fs-2xl !important;
+  font-weight: 800 !important;
+}
+
+.heroStatLabel {
+  color: rgba(255, 255, 255, 0.55) !important;
+  font-size: $fs-xs !important;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+// Feature Grid
+.featureGrid {
+  margin-top: $space-8;
+}
+
+.featureCard {
+  height: 100%;
+  border-radius: $radius-xl !important;
+  padding: $space-6 !important;
+  border: 1px solid var(--color-border) !important;
+  background: var(--color-surface) !important;
+  @include card-hover;
+  position: relative;
+
+  [data-theme='dark'] & {
+    background: $dark-surface-1 !important;
+    border-color: $dark-border !important;
+  }
+
+  &.featured {
+    border-color: rgba($color-primary, 0.2) !important;
+
+    [data-theme='dark'] & {
+      border-color: rgba($color-primary-light, 0.25) !important;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: $gradient-primary;
+      border-radius: $radius-xl $radius-xl 0 0;
+    }
+  }
+}
+
+.featureTag {
+  font-size: $fs-xs !important;
+  border-radius: $radius-full !important;
+  margin-bottom: $space-3;
+  display: inline-block;
+}
+
+.featureIcon {
+  width: 52px;
+  height: 52px;
+  border-radius: $radius-md;
+  background: rgba($color-primary, 0.08);
+  color: $color-primary;
+  @include flex-center;
+  font-size: 24px;
+  margin-bottom: $space-4;
+  transition: all $transition-base;
+
+  .featureCard:hover & {
+    background: $gradient-primary;
+    color: white;
+  }
+
+  &.iconHighlight {
+    background: $gradient-primary;
+    color: white;
+  }
+
+  [data-theme='dark'] & {
+    background: rgba($color-primary-light, 0.15);
+    color: rgba($color-primary-light, 0.9);
+  }
+}
+
+.featureTitle {
+  font-family: $font-heading !important;
+  font-size: $fs-lg !important;
+  font-weight: 700 !important;
+  margin: 0 0 $space-3 !important;
+  color: var(--color-text) !important;
+}
+
+.featureDesc {
+  color: var(--color-muted) !important;
+  font-size: $fs-sm !important;
+  line-height: 1.65 !important;
+  margin: 0 !important;
+}
+
+// Onboarding Steps
+.steps {
+  padding: $space-8;
+  background: var(--color-surface);
+  border-radius: $radius-xl;
+  border: 1px solid var(--color-border);
+
+  [data-theme='dark'] & {
+    background: $dark-surface-1;
+    border-color: $dark-border;
+  }
+}
+
+.stepIcon {
+  width: 32px;
+  height: 32px;
+  background: $gradient-primary;
+  border-radius: 50%;
+  @include flex-center;
+  color: white;
+  font-weight: 700;
+  font-size: $fs-sm;
+}
+
+.stepTitle {
+  font-weight: 700 !important;
+  font-size: $fs-base !important;
+  color: var(--color-text) !important;
+}
+
+.stepDesc {
+  color: var(--color-muted) !important;
+  font-size: $fs-sm !important;
+}
+
+// Bottom CTA
+.bottomCta {
+  @include flex-column-center;
+  gap: $space-4;
+  text-align: center;
+  padding: $space-8 0;
+}
+
+.ctaIcon {
+  font-size: 48px;
+  color: $color-secondary;
+}
+
+.ctaTitle {
+  color: white !important;
+  font-family: $font-heading !important;
+  font-weight: 700 !important;
+  margin: 0 !important;
+}
+
+.ctaSubtitle {
+  color: rgba(255, 255, 255, 0.6) !important;
+  margin: 0 !important;
+}

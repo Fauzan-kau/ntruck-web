@@ -1,0 +1,109 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-2;
+  font-family: $font-body;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  transition: all $transition-base;
+  border-radius: $radius-base !important;
+  cursor: pointer;
+  @include focus-ring;
+
+  &.fullWidth {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .rightIcon {
+    margin-left: $space-1;
+    display: flex;
+    align-items: center;
+  }
+
+  // Size variants
+  &.size-sm {
+    height: 34px;
+    padding: 0 $space-4;
+    font-size: $fs-sm;
+  }
+
+  &.size-md {
+    height: 42px;
+    padding: 0 $space-6;
+    font-size: $fs-base;
+  }
+
+  &.size-lg {
+    height: 50px;
+    padding: 0 $space-8;
+    font-size: $fs-lg;
+  }
+
+  &.size-xl {
+    height: 58px;
+    padding: 0 $space-10;
+    font-size: $fs-xl;
+  }
+
+  // Variant overrides
+  &.variant-primary {
+    background: $gradient-primary !important;
+    border: none !important;
+    color: white !important;
+    box-shadow: 0 4px 16px rgba(27, 42, 107, 0.35) !important;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(27, 42, 107, 0.45) !important;
+      opacity: 0.92;
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+
+  &.variant-secondary {
+    background: $gradient-secondary !important;
+    border: none !important;
+    color: white !important;
+    box-shadow: 0 4px 16px rgba(255, 107, 0, 0.3) !important;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(255, 107, 0, 0.4) !important;
+      opacity: 0.92;
+    }
+  }
+
+  &.variant-outline {
+    background: transparent !important;
+    border: 2px solid $color-primary !important;
+    color: $color-primary !important;
+
+    &:hover {
+      background: $color-primary !important;
+      color: white !important;
+    }
+
+    [data-theme='dark'] & {
+      border-color: rgba(255, 255, 255, 0.3) !important;
+      color: white !important;
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.1) !important;
+        border-color: white !important;
+      }
+    }
+  }
+
+  &.variant-ghost {
+    background: transparent !important;
+    border: none !important;
+
+    &:hover {
+      background: rgba($color-primary, 0.08) !important;
+    }
+  }
+}

@@ -1,0 +1,80 @@
+.header {
+  padding: 0 0 $space-8;
+
+  &.dark {
+    .title,
+    .subtitle {
+      color: $color-neutral-50 !important;
+    }
+
+    .subtitle {
+      color: rgba(255, 255, 255, 0.72) !important;
+    }
+  }
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;
+}
+
+.eyebrow {
+  font-size: $fs-sm;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: $radius-full !important;
+  padding: $space-1 $space-4 !important;
+  width: fit-content;
+}
+
+.title {
+  font-family: $font-heading !important;
+  font-size: clamp(#{$fs-3xl}, 4vw, #{$fs-5xl}) !important;
+  font-weight: 800 !important;
+  line-height: 1.1 !important;
+  letter-spacing: -0.03em !important;
+  margin: 0 !important;
+}
+
+.gradientTitle {
+  @include gradient-text;
+}
+
+.subtitle {
+  font-size: $fs-lg !important;
+  line-height: 1.65 !important;
+  color: $color-neutral-500 !important;
+  margin: 0 !important;
+}
+
+.actions {
+  margin-top: $space-2;
+}
+
+// Alignment
+.align-center {
+  .inner {
+    align-items: center;
+    text-align: center;
+  }
+
+  .subtitle {
+    margin: 0 auto !important;
+  }
+}
+
+.align-left {
+  .inner {
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+
+.align-right {
+  .inner {
+    align-items: flex-end;
+    text-align: right;
+  }
+}

@@ -1,0 +1,66 @@
+.section {
+  background: $dark-surface-1 !important;
+  border-top: 1px solid $dark-border;
+  border-bottom: 1px solid $dark-border;
+}
+
+.grid {
+  display: flex;
+  align-items: stretch;
+}
+
+.statItem {
+  @include flex-column-center;
+  gap: $space-3;
+  padding: $space-8 $space-6;
+  text-align: center;
+  transition: background $transition-base;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  &.hasDivider {
+    border-right: 1px solid $dark-border;
+
+    @include sm {
+      border-right: none;
+      border-bottom: 1px solid $dark-border;
+    }
+  }
+
+  @include sm {
+    padding: $space-6 $space-4;
+  }
+}
+
+.iconWrapper {
+  width: 52px;
+  height: 52px;
+  border-radius: $radius-md;
+  @include flex-center;
+  font-size: 22px;
+  transition: transform $transition-base;
+
+  .statItem:hover & {
+    transform: scale(1.1);
+  }
+}
+
+.value {
+  font-family: $font-heading !important;
+  font-size: clamp(#{$fs-2xl}, 3vw, #{$fs-4xl}) !important;
+  font-weight: 800 !important;
+  color: white !important;
+  margin: 0 !important;
+  line-height: 1 !important;
+  letter-spacing: -0.02em !important;
+}
+
+.label {
+  color: $color-neutral-400 !important;
+  font-size: $fs-sm !important;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}

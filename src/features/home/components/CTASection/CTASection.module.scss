@@ -1,0 +1,85 @@
+.inner {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  padding: $space-16 $space-8;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: $radius-xl * 2;
+
+  @include sm {
+    padding: $space-12 $space-5;
+    border-radius: $radius-xl;
+  }
+}
+
+.deco1 {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba($color-secondary, 0.2) 0%, transparent 70%);
+  top: -100px;
+  right: -80px;
+  pointer-events: none;
+}
+
+.deco2 {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba($color-primary-light, 0.2) 0%, transparent 70%);
+  bottom: -80px;
+  left: -60px;
+  pointer-events: none;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  @include flex-column-center;
+  gap: $space-6;
+}
+
+.title {
+  font-family: $font-heading !important;
+  font-size: clamp(#{$fs-3xl}, 4vw, #{$fs-5xl}) !important;
+  font-weight: 800 !important;
+  color: white !important;
+  margin: 0 !important;
+  letter-spacing: -0.03em !important;
+  line-height: 1.1 !important;
+  max-width: 700px;
+}
+
+.subtitle {
+  color: rgba(255, 255, 255, 0.65) !important;
+  font-size: $fs-lg !important;
+  max-width: 560px;
+  margin: 0 !important;
+  line-height: 1.65 !important;
+}
+
+.buttons {
+  margin-top: $space-2;
+}
+
+.primaryBtn {
+  box-shadow: 0 8px 30px rgba($color-secondary, 0.45) !important;
+}
+
+.secondaryBtn {
+  border-color: rgba(255, 255, 255, 0.4) !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+
+  &:hover {
+    border-color: white !important;
+    color: white !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+  }
+}
+
+.disclaimer {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: $fs-sm;
+  margin-top: $space-2;
+}

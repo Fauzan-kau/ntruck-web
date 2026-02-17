@@ -1,0 +1,164 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: $z-fixed;
+  height: $navbar-height !important;
+  padding: 0 $space-6 !important;
+  background: rgba(255, 255, 255, 0.85) !important;
+  border-bottom: 1px solid transparent;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all $transition-slow;
+
+  &.scrolled {
+    border-bottom-color: $color-neutral-200;
+    box-shadow: $shadow-md;
+    background: rgba(255, 255, 255, 0.95) !important;
+  }
+
+  &.dark {
+    background: rgba($dark-surface-1, 0.85) !important;
+
+    &.scrolled {
+      border-bottom-color: $dark-border;
+      background: rgba($dark-surface-1, 0.95) !important;
+    }
+  }
+}
+
+.inner {
+  @include flex-between;
+  height: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+// Logo
+.logo {
+  @include flex-center;
+  gap: $space-2;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.logoSvg {
+  flex-shrink: 0;
+  display: block;
+}
+
+.logoText {
+  font-family: $font-display;
+  font-size: $fs-xl;
+  font-weight: 400;
+  color: $color-primary;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+
+  [data-theme='dark'] & {
+    color: $color-neutral-50;
+  }
+}
+
+.logoAccent {
+  color: $color-secondary;
+}
+
+// Desktop nav
+.desktopNav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+
+  @include sm {
+    display: none;
+  }
+}
+
+.menu {
+  border-bottom: none !important;
+  background: transparent !important;
+  font-weight: 500;
+
+  :global(.ant-menu-item:hover),
+  :global(.ant-menu-item-active) {
+    color: $color-secondary !important;
+
+    a { color: $color-secondary !important; }
+  }
+
+  :global(.ant-menu-item-selected),
+  :global(.ant-menu-item-selected) a {
+    color: $color-secondary !important;
+  }
+}
+
+// Actions
+.actions {
+  @include flex-center;
+  gap: $space-2;
+}
+
+.themeSwitch {
+  flex-shrink: 0;
+}
+
+.ctaBtn {
+  background: $color-secondary !important;
+  border: none !important;
+  color: $color-primary !important;
+  font-weight: 600;
+
+  &:hover {
+    background: $color-secondary-light !important;
+  }
+
+  @include sm {
+    display: none;
+  }
+}
+
+.menuBtn {
+  display: none !important;
+
+  @include sm {
+    display: inline-flex !important;
+  }
+}
+
+// Drawer
+.drawerLogo {
+  font-family: $font-heading;
+  font-size: $fs-xl;
+  font-weight: 700;
+  color: $color-primary;
+  @include flex-center;
+  gap: $space-2;
+}
+
+.drawerMenu {
+  border-right: none !important;
+  margin-bottom: $space-6;
+
+  :global(.ant-menu-item) {
+    font-size: $fs-base;
+    font-weight: 500;
+    height: 48px;
+    line-height: 48px;
+  }
+}
+
+.drawerActions {
+  @include flex-column;
+  gap: $space-4;
+  padding: $space-4;
+  border-top: 1px solid var(--color-border);
+  margin-top: auto;
+}
+
+.themeToggleRow {
+  @include flex-between;
+  padding: $space-2 0;
+  font-weight: 500;
+}

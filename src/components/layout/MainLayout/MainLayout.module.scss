@@ -1,0 +1,9 @@
+.layout {
+  min-height: 100vh;
+  background: var(--color-bg);
+}
+
+.content {
+  margin-top: $navbar-height;
+  min-height: calc(100vh - #{$navbar-height});
+}

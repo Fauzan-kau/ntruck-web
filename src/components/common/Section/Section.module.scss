@@ -1,0 +1,45 @@
+.section {
+  position: relative;
+  width: 100%;
+
+  // Size variants
+  &.size-sm {
+    padding: $space-12 0;
+
+    @include md { padding: $space-10 0; }
+    @include sm { padding: $space-8  0; }
+  }
+
+  &.size-md {
+    padding: $space-20 0;
+
+    @include md { padding: $space-16 0; }
+    @include sm { padding: $space-12 0; }
+  }
+
+  &.size-lg {
+    padding: $space-32 0;
+
+    @include md { padding: $space-24 0; }
+    @include sm { padding: $space-16 0; }
+  }
+
+  // Color variants
+  &.variant-default {
+    background: var(--color-bg);
+  }
+
+  &.variant-alternate {
+    background: var(--color-surface);
+  }
+
+  &.variant-dark {
+    background: $dark-bg;
+    color: $color-neutral-50;
+  }
+
+  &.variant-gradient {
+    background: $gradient-hero;
+    color: $color-neutral-50;
+  }
+}
