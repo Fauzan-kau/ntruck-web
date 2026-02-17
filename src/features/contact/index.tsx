@@ -14,6 +14,7 @@ import {
 import { Section } from '@/components/common/Section';
 import { Container } from '@/components/common/Container';
 import { Button } from '@/components/common/Button';
+import contactBg from '@/assets/images/contact-bg.webp';
 import styles from './Contact.module.scss';
 
 const { Title, Paragraph, Text } = Typography;
@@ -64,7 +65,11 @@ const ContactPage: React.FC = () => {
   return (
     <>
       {/* Hero */}
-      <Section variant="gradient" size="md">
+      <section
+        className={styles.heroSection}
+        style={{ backgroundImage: `url(${contactBg})` }}
+      >
+        <div className={styles.heroOverlay} />
         <Container>
           <div className={styles.pageHero}>
             <Tag color="orange" className={styles.heroEyebrow}>Contact Us</Tag>
@@ -77,7 +82,7 @@ const ContactPage: React.FC = () => {
             </Paragraph>
           </div>
         </Container>
-      </Section>
+      </section>
 
       {/* Main section */}
       <Section variant="default" size="lg">

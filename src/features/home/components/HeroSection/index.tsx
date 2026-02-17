@@ -84,10 +84,19 @@ export const HeroSection: React.FC = () => (
             {/* Social proof */}
             <div className={styles.socialProof}>
               <div className={styles.avatarStack}>
-                {[1, 2, 3, 4].map(i => (
-                  <div key={i} className={styles.avatar} style={{ zIndex: 4 - i }}>
-                    {String.fromCodePoint(0x1F464)}
-                  </div>
+                {[
+                  'https://i.pravatar.cc/64?img=11',
+                  'https://i.pravatar.cc/64?img=32',
+                  'https://i.pravatar.cc/64?img=57',
+                  'https://i.pravatar.cc/64?img=68',
+                ].map((src, i) => (
+                  <img
+                    key={i}
+                    src={src}
+                    alt="driver"
+                    className={styles.avatar}
+                    style={{ zIndex: 4 - i }}
+                  />
                 ))}
               </div>
               <Text className={styles.proofText}>

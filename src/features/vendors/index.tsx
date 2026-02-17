@@ -6,6 +6,8 @@ import { Container } from '@/components/common/Container';
 import { PageHeader } from '@/components/common/PageHeader';
 import { Button } from '@/components/common/Button';
 import { Link } from 'react-router-dom';
+import loadPostImg from '@/assets/images/loadpost.svg';
+import loginImg    from '@/assets/images/login.svg';
 import { vendorPageHero, vendorFeatures, vendorStats } from './data';
 import styles from './Vendors.module.scss';
 
@@ -16,30 +18,51 @@ const VendorsPage: React.FC = () => (
     {/* Hero */}
     <Section variant="gradient" size="lg">
       <Container>
-        <div className={styles.pageHero}>
-          <Tag color="orange" className={styles.heroEyebrow}>{vendorPageHero.eyebrow}</Tag>
-          <Title level={1} className={styles.heroTitle}>
-            {vendorPageHero.title}
-          </Title>
-          <Paragraph className={styles.heroSubtitle}>
-            {vendorPageHero.subtitle}
-          </Paragraph>
+        <Row gutter={[48, 48]} align="middle" className={styles.heroRow}>
+          {/* Left – text */}
+          <Col xs={24} lg={13}>
+            <div className={styles.pageHero}>
+              <Tag color="orange" className={styles.heroEyebrow}>{vendorPageHero.eyebrow}</Tag>
+              <Title level={1} className={styles.heroTitle}>
+                {vendorPageHero.title}
+              </Title>
+              <Paragraph className={styles.heroSubtitle}>
+                {vendorPageHero.subtitle}
+              </Paragraph>
 
-          <div className={styles.heroStats}>
-            {vendorStats.map(stat => (
-              <div key={stat.label} className={styles.heroStat}>
-                <Text className={styles.heroStatValue} style={{ color: stat.color }}>{stat.value}</Text>
-                <Text className={styles.heroStatLabel}>{stat.label}</Text>
+              <div className={styles.heroStats}>
+                {vendorStats.map(stat => (
+                  <div key={stat.label} className={styles.heroStat}>
+                    <Text className={styles.heroStatValue} style={{ color: stat.color }}>{stat.value}</Text>
+                    <Text className={styles.heroStatLabel}>{stat.label}</Text>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
 
-          <Link to="/contact">
-            <Button variant="secondary" size="lg" rightIcon={<ArrowRightOutlined />}>
-              Get Vendor Access
-            </Button>
-          </Link>
-        </div>
+              <Link to="/contact">
+                <Button variant="secondary" size="lg" rightIcon={<ArrowRightOutlined />}>
+                  Get Vendor Access
+                </Button>
+              </Link>
+            </div>
+          </Col>
+
+          {/* Right – app screen mockups */}
+          <Col xs={24} lg={11} className={styles.heroVisualCol}>
+            <div className={styles.heroVisual}>
+              <img
+                src={loginImg}
+                alt="Login screen"
+                className={`${styles.screenImg} ${styles.screenBack}`}
+              />
+              <img
+                src={loadPostImg}
+                alt="Load Post screen"
+                className={`${styles.screenImg} ${styles.screenFront}`}
+              />
+            </div>
+          </Col>
+        </Row>
       </Container>
     </Section>
 

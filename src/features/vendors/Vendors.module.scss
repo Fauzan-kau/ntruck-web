@@ -1,12 +1,66 @@
-// Reuse the same hero / feature patterns (orange-accented variant)
-.pageHero {
-  @include flex-column-center;
-  text-align: center;
-  gap: $space-6;
-  max-width: 800px;
-  margin: 0 auto;
+// Hero
+.heroRow {
+  min-height: calc(100vh - 72px);
   padding: $space-12 0;
+
+  @include md {
+    min-height: auto;
+    padding: $space-8 0;
+  }
+}
+
+.pageHero {
+  @include flex-column;
+  gap: $space-6;
   animation: fade-in-up 0.8s ease both;
+
+  @include md {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+// App screen mockups
+.heroVisualCol {
+  @include flex-center;
+  animation: slide-in-right 0.9s ease 0.2s both;
+
+  @include md {
+    display: none;
+  }
+}
+
+.heroVisual {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  margin: 0 auto;
+  height: 520px;
+}
+
+.screenImg {
+  position: absolute;
+  width: 58%;
+  height: auto;
+  border-radius: $radius-xl;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+  object-fit: contain;
+}
+
+.screenBack {
+  top: 0;
+  left: 0;
+  z-index: 1;
+  animation: float 6s ease-in-out infinite;
+  transform: rotate(-4deg);
+}
+
+.screenFront {
+  bottom: 0;
+  right: 0;
+  z-index: 2;
+  animation: float 5s ease-in-out 1.5s infinite;
+  transform: rotate(3deg);
 }
 
 .heroEyebrow {
@@ -42,7 +96,11 @@
   display: flex;
   gap: $space-8;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
+
+  @include md {
+    justify-content: center;
+  }
 }
 
 .heroStat { @include flex-column; align-items: center; gap: $space-1; }
