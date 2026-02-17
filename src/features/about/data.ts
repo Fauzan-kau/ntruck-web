@@ -1,5 +1,6 @@
 import React from 'react';
 import ramsheedDp from '@/assets/images/ramsheed-dp.png';
+import rameesDp   from '@/assets/images/ramees-dp.jpeg';
 import {
   CodeOutlined,
   ApartmentOutlined,
@@ -88,6 +89,7 @@ export const teamMembers: TeamMember[] = [
     role: 'Founder',
     initials: 'RA',
     color: '#002369',
+    image: rameesDp,
     tags: ['Strategy', 'Industry Expertise', 'Legal'],
     bio: [
       'With deep roots in India\'s trucking sector and a dual background in business and law (University of Delhi & Central University of Haryana), Ramees drives ntruck\'s vision of a transparent, technology-enabled freight network — shaped by years of direct work with drivers, fleet owners, and logistics clients.',
