@@ -11,6 +11,7 @@ const HomePage        = React.lazy(() => import('@/features/home'));
 const DriversPage     = React.lazy(() => import('@/features/drivers'));
 const VendorsPage     = React.lazy(() => import('@/features/vendors'));
 const ContactPage     = React.lazy(() => import('@/features/contact'));
+const ComingSoonPage  = React.lazy(() => import('@/features/coming-soon'));
 
 const PageLoader: React.FC = () => (
   <div
@@ -34,11 +35,9 @@ export const AppRoutes: React.FC = () => (
         <Route path="/vendors"      element={<VendorsPage />}      />
         <Route path="/contact"      element={<ContactPage />}      />
 
-        {/* Future routes — add here as the platform scales */}
-        {/* <Route path="/docs"       element={<DocsPage />}      /> */}
-        {/* <Route path="/blog"       element={<BlogPage />}      /> */}
-        {/* <Route path="/careers"    element={<CareersPage />}   /> */}
-        {/* <Route path="/investor"   element={<InvestorPage />}  /> */}
+        <Route path="/careers"  element={<ComingSoonPage />} />
+        <Route path="/blog"     element={<ComingSoonPage />} />
+        <Route path="/press"    element={<ComingSoonPage />} />
 
         {/* 404 fallback */}
         <Route

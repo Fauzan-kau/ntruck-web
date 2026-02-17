@@ -26,7 +26,7 @@ export const driverFeatures: Feature[] = [
     title:       'Instant DL Verification',
     description:
       'Your driving license is verified in seconds via SARATHI, the official government database. No manual checks, no delays.',
-    highlight:   true,
+    // highlight:   true,
     tag:         'SARATHI API',
   },
   {
@@ -35,7 +35,7 @@ export const driverFeatures: Feature[] = [
     title:       'Vehicle RC Verification',
     description:
       'Vehicle registration, fitness, insurance, and PUC certificates are auto-verified through VAHAN in real time.',
-    highlight:   true,
+    // highlight:   true,
     tag:         'VAHAN API',
   },
   {
@@ -66,7 +66,7 @@ export const driverFeatures: Feature[] = [
     title:       'Earnings Dashboard & Wallet',
     description:
       'See all your completed trips, earnings, deductions, and wallet balance in one clear screen. Instant UPI payouts.',
-    highlight:   true,
+    // highlight:   true,
   },
   {
     id:          'navigation',

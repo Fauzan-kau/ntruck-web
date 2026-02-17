@@ -25,7 +25,7 @@ export const vendorFeatures: Feature[] = [
     title:       'Instant Load Posting',
     description:
       'Post a load in under 2 minutes. Specify origin, destination, weight, vehicle type, and preferred schedule. Drivers near you get notified instantly.',
-    highlight:   true,
+    // highlight:   true,
   },
   {
     id:          'cost-calculator',
@@ -33,7 +33,7 @@ export const vendorFeatures: Feature[] = [
     title:       'Transparent Cost Calculation',
     description:
       'Our algorithm considers distance, vehicle type, weight, toll charges, fuel surcharge, and demand to give you a fair, upfront price — always.',
-    highlight:   true,
+    // highlight:   true,
     tag:         'AI Pricing',
   },
   {
@@ -57,7 +57,7 @@ export const vendorFeatures: Feature[] = [
     title:       'Secure Payment Flow',
     description:
       'Funds are held in escrow until delivery is confirmed. Driver receives payment only after ePOD is uploaded. Zero fraud risk.',
-    highlight:   true,
+    // highlight:   true,
   },
   {
     id:          'epod',
@@ -91,7 +91,7 @@ export const vendorFeatures: Feature[] = [
 ];
 
 export const vendorStats = [
-  { value: '12,000+', label: 'Active Vendors',     color: '#FF6B00' },
+  { value: '800+', label: 'Active Vendors',     color: '#FF6B00' },
   { value: '₹850Cr+', label: 'Freight Value Moved', color: '#1B2A6B' },
   { value: '99.2%',   label: 'Payment Success Rate', color: '#22C55E' },
   { value: '4.7★',    label: 'Vendor Satisfaction', color: '#F59E0B' },

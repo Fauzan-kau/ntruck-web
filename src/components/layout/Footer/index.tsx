@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Row, Col, Divider, Typography, Space } from 'antd';
 import {
-  TruckOutlined,
   TwitterOutlined,
   LinkedinOutlined,
   InstagramOutlined,
@@ -11,6 +10,7 @@ import {
   EnvironmentOutlined,
 } from '@ant-design/icons';
 import { Container } from '@/components/common/Container';
+import { Logo } from '@/components/common/Logo';
 import styles from './Footer.module.scss';
 
 const { Text, Paragraph } = Typography;
@@ -27,12 +27,6 @@ const COMPANY_LINKS = [
   { label: 'Press',         path: '/press' },
 ];
 
-const RESOURCE_LINKS = [
-  { label: 'Documentation', path: '/docs' },
-  { label: 'API Reference', path: '/api' },
-  { label: 'Changelog',     path: '/changelog' },
-];
-
 const LEGAL_LINKS = [
   { label: 'Privacy Policy',    path: '/privacy' },
   { label: 'Terms of Service',  path: '/terms' },
@@ -47,9 +41,7 @@ export const Footer: React.FC = () => (
         {/* Brand column */}
         <Col xs={24} sm={24} md={8} lg={7}>
           <Link to="/" className={styles.logo}>
-            <div className={styles.logoIcon}>
-              <TruckOutlined />
-            </div>
+            <Logo variant="white" type="icon" height={36} />
             <span className={styles.logoText}>
               n<span className={styles.logoAccent}>Truck</span>
             </span>
@@ -76,11 +68,11 @@ export const Footer: React.FC = () => (
             <a href="mailto:hello@ntruck.in" className={styles.contactItem}>
               <MailOutlined /> hello@ntruck.in
             </a>
-            <a href="tel:+918000000000" className={styles.contactItem}>
-              <PhoneOutlined /> +91 80000 00000
+            <a href="tel:+919544336827" className={styles.contactItem}>
+              <PhoneOutlined /> +91 954433 6827
             </a>
             <span className={styles.contactItem}>
-              <EnvironmentOutlined /> Bengaluru, India
+              <EnvironmentOutlined /> NO. 104/3, KALPAKA, PATTAMBI, PALAKKAD, Melepattambi, Ottappalam, Palakkad- 679306
             </span>
           </div>
         </Col>
@@ -108,19 +100,9 @@ export const Footer: React.FC = () => (
           </ul>
         </Col>
 
-        <Col xs={12} sm={12} md={4} lg={4}>
-          <Text className={styles.colTitle}>Resources</Text>
-          <ul className={styles.linkList}>
-            {RESOURCE_LINKS.map(l => (
-              <li key={l.path}>
-                <Link to={l.path} className={styles.link}>{l.label}</Link>
-              </li>
-            ))}
-          </ul>
-        </Col>
 
         {/* ULIP badge */}
-        <Col xs={12} sm={12} md={4} lg={5}>
+        {/* <Col xs={12} sm={12} md={4} lg={5}>
           <Text className={styles.colTitle}>Compliance</Text>
           <div className={styles.badges}>
             {['VAHAN', 'SARATHI', 'DigiLocker', 'GST', 'MCA'].map(badge => (
@@ -130,7 +112,7 @@ export const Footer: React.FC = () => (
           <Text className={styles.ulipNote}>
             ULIP-Integrated Platform by Ministry of Road Transport & Highways
           </Text>
-        </Col>
+        </Col> */}
       </Row>
 
       <Divider className={styles.divider} />

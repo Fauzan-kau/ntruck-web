@@ -1,0 +1,43 @@
+.wrapper {
+  min-height: 70vh;
+  @include flex-column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: $space-16 $space-6;
+  gap: $space-4;
+}
+
+.icon {
+  font-size: 56px;
+  color: $color-secondary;
+  line-height: 1;
+}
+
+.title {
+  font-family: $font-heading !important;
+  font-size: clamp(#{$fs-3xl}, 4vw, #{$fs-5xl}) !important;
+  font-weight: 800 !important;
+  color: var(--color-text) !important;
+  margin: 0 !important;
+}
+
+.subtitle {
+  color: var(--color-muted) !important;
+  font-size: $fs-lg !important;
+  margin: 0 !important;
+}
+
+.back {
+  @include flex-center;
+  gap: $space-2;
+  margin-top: $space-4;
+  color: $color-secondary !important;
+  font-weight: 600;
+  font-size: $fs-base;
+  transition: opacity $transition-base;
+
+  &:hover {
+    opacity: 0.75;
+  }
+}

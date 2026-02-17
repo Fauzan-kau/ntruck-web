@@ -84,6 +84,7 @@ export const Navbar: React.FC = () => {
               selectedKeys={[selectedKey]}
               items={NAV_ITEMS}
               className={styles.menu}
+              disabledOverflow
             />
           </nav>
 
@@ -107,7 +108,7 @@ export const Navbar: React.FC = () => {
               type="text"
               icon={<MenuOutlined />}
               className={styles.menuBtn}
-              onClick={() => setDrawerOpen(true)}
+              onClick={() => setDrawerOpen(prev => !prev)}
               aria-label="Open menu"
             />
           </Space>

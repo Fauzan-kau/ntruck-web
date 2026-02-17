@@ -28,8 +28,7 @@
     transition: background $transition-base;
   }
 
-  &:hover::before,
-  &.highlighted::before {
+  &::before {
     background: $gradient-secondary;
   }
 
@@ -55,23 +54,11 @@
   width: 48px;
   height: 48px;
   border-radius: $radius-md;
-  background: rgba($color-primary, 0.08);
-  color: $color-primary;
+  background: $gradient-primary;
+  color: white;
   @include flex-center;
   font-size: 22px;
   margin-bottom: $space-4;
-  transition: all $transition-base;
-
-  .featureCard:hover & {
-    background: $gradient-primary;
-    color: white;
-    transform: scale(1.05);
-  }
-
-  &.iconHighlight {
-    background: $gradient-primary;
-    color: white;
-  }
 }
 
 .featureTitle {

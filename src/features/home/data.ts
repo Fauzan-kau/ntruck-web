@@ -30,7 +30,7 @@ export const homeStats: Stat[] = [
     color:  '#1B2A6B',
   },
   {
-    value:  '12,000+',
+    value:  '800+',
     label:  'Active Vendors',
     icon:   React.createElement(TruckOutlined),
     color:  '#FF6B00',
@@ -143,7 +143,7 @@ export const howItWorksSteps: HowItWorksStep[] = [
     step:        1,
     icon:        React.createElement(SafetyCertificateOutlined),
     title:       'Get Verified',
-    description: 'Drivers upload DL & RC; vendors register their GSTIN. Our ULIP APIs verify everything in real time — no manual checks.',
+    description: 'Drivers upload DL & RC; vendors register their GSTIN.Our App verify everything in real time — no manual checks.',
   },
   {
     step:        2,
@@ -237,7 +237,7 @@ export const heroHeadline = {
 
 export const ctaData = {
   title:    "Ready to Digitize Your Logistics?",
-  subtitle: "Join 50,000+ drivers and 12,000+ vendors already on nTruck. Get started for free.",
+  subtitle: "Join 50,000+ drivers and 800+ vendors already on nTruck. Get started for free.",
   primaryLabel:   'Get Started Free',
   secondaryLabel: 'Schedule a Demo',
 };

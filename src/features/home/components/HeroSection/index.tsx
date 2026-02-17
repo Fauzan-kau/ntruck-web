@@ -9,6 +9,8 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/common/Button';
 import { Container } from '@/components/common/Container';
 import { heroHeadline } from '../../data';
+import appIcon    from '@/assets/images/app-icon.png';
+import iphoneMock from '@/assets/images/iphone-mockup.png';
 import styles from './HeroSection.module.scss';
 
 const { Title, Paragraph, Text } = Typography;
@@ -89,7 +91,7 @@ export const HeroSection: React.FC = () => (
                 ))}
               </div>
               <Text className={styles.proofText}>
-                <strong>50,000+</strong> verified drivers trust nTruck
+                <strong>1,000+</strong> verified drivers trust nTruck
               </Text>
             </div>
           </div>
@@ -98,56 +100,18 @@ export const HeroSection: React.FC = () => (
         {/* Right – Visual */}
         <Col xs={24} lg={11} className={styles.visualCol}>
           <div className={styles.visualWrapper}>
-            {/* Mock app card */}
-            <div className={styles.appCard}>
-              <div className={styles.appCardHeader}>
-                <div className={styles.appCardDot} style={{ background: '#EF4444' }} />
-                <div className={styles.appCardDot} style={{ background: '#F59E0B' }} />
-                <div className={styles.appCardDot} style={{ background: '#22C55E' }} />
-                <Text className={styles.appCardTitle}>nTruck Live Dashboard</Text>
-              </div>
-              <div className={styles.appCardBody}>
-                <div className={styles.mapPlaceholder}>
-                  <div className={styles.mapGrid} />
-                  <div className={styles.truckDot}>
-                    <span>🚚</span>
-                    <div className={styles.pingRing} />
-                  </div>
-                  <div className={styles.routeLine} />
-                </div>
-                <div className={styles.tripInfo}>
-                  <div className={styles.tripStat}>
-                    <Text className={styles.statLabel}>Live Trips</Text>
-                    <Text className={styles.statValue}>1,247</Text>
-                  </div>
-                  <div className={styles.tripStat}>
-                    <Text className={styles.statLabel}>Avg ETA</Text>
-                    <Text className={styles.statValue}>4.2h</Text>
-                  </div>
-                  <div className={styles.tripStat}>
-                    <Text className={styles.statLabel}>On Time</Text>
-                    <Text className={styles.statValue} style={{ color: '#22C55E' }}>94%</Text>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Floating badge cards */}
-            <div className={`${styles.floatCard} ${styles.floatCard1}`}>
-              <CheckCircleOutlined style={{ color: '#22C55E', fontSize: 18 }} />
-              <div>
-                <div className={styles.floatCardTitle}>Trip Verified</div>
-                <div className={styles.floatCardSub}>Mumbai → Delhi</div>
-              </div>
-            </div>
-
-            <div className={`${styles.floatCard} ${styles.floatCard2}`}>
-              <span style={{ fontSize: 20 }}>⚡</span>
-              <div>
-                <div className={styles.floatCardTitle}>₹24,500 Released</div>
-                <div className={styles.floatCardSub}>Instant payout</div>
-              </div>
-            </div>
+            {/* iPhone mockup — main image */}
+            <img
+              src={iphoneMock}
+              alt="nTruck app on iPhone"
+              className={styles.iphoneImg}
+            />
+            {/* App icon — floating top-left */}
+            <img
+              src={appIcon}
+              alt="nTruck app icon"
+              className={styles.appIconImg}
+            />
           </div>
         </Col>
       </Row>

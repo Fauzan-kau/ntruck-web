@@ -7,7 +7,7 @@ import {
   MailOutlined,
   PhoneOutlined,
   EnvironmentOutlined,
-  TwitterOutlined,
+  InstagramOutlined,
   LinkedinOutlined,
   SendOutlined,
 } from '@ant-design/icons';
@@ -38,14 +38,14 @@ const CONTACT_INFO = [
   {
     icon:  <PhoneOutlined />,
     label: 'Support Helpline',
-    value: '+91 80000 00000',
-    href:  'tel:+918000000000',
+    value: '+91 954433  6827',
+    href:  'tel:+919544336827',
     color: '#22C55E',
   },
   {
     icon:  <EnvironmentOutlined />,
     label: 'Headquarters',
-    value: 'Bengaluru, Karnataka, India',
+    value: 'NO. 104/3, KALPAKA, PATTAMBI, PALAKKAD, Melepattambi, Ottappalam, Palakkad- 679306',
     href:  undefined,
     color: '#FF6B00',
   },
@@ -126,9 +126,9 @@ const ContactPage: React.FC = () => {
                       target="_blank"
                       rel="noreferrer"
                       className={styles.socialBtn}
-                      aria-label="Twitter"
+                      aria-label="Instagram"
                     >
-                      <TwitterOutlined />
+                      <InstagramOutlined />
                     </a>
                     <a
                       href="https://linkedin.com"
@@ -221,7 +221,6 @@ const ContactPage: React.FC = () => {
                       <Option value="vendor">Vendor / Shipper Access</Option>
                       <Option value="enterprise">Enterprise Solution</Option>
                       <Option value="investor">Investor Relations</Option>
-                      <Option value="api">API / Technical Integration</Option>
                       <Option value="press">Press & Media</Option>
                       <Option value="other">Other</Option>
                     </Select>
